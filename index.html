@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Bloat-free screenshot utility">
+        <meta name="author" content="Kanashimo">
+        
+        <link rel="shortcut icon" href="./img/favicon.ico">
+
+        <title>Home - pengui</title>
+
+        <link href="./css/bootstrap.min.css" rel="stylesheet">
+        <link href="./css/font-awesome.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="./css/highlight.min.css">
+        <link href="./css/base.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <!-- Main title -->
+            <a class="navbar-brand" href=".">
+            <i class="fa fa-camera" aria-hidden="true"></i> 
+            pengui
+            </a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            <!-- Main navigation -->
+            <ul class="nav navbar-nav">
+            
+            
+            
+                
+                <li class="active">
+                    <a href=".">
+                      Home
+                    </a>
+                </li>
+                
+            
+            
+            
+            
+            
+                
+                <li >
+                    <a href="showcase/">
+                      Showcase
+                    </a>
+                </li>
+                
+            
+            
+            
+            
+            
+                
+                <li >
+                    <a href="https://github.com/Kanashimo/pengui/issues">
+                      Report an issue
+                    </a>
+                </li>
+                
+            
+            
+            
+            </ul>
+
+            <!-- Search, Navigation and Repo links -->
+            <ul class="nav navbar-nav navbar-right">
+            
+            
+            
+            
+            
+            
+            
+              
+                
+                <li>
+                    <a href="https://github.com/kanashimo/pengui">
+                        
+                            <i class="fa fa-gihub"></i>
+                        
+                        GitHub
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            <div class="col-md-3">
+<div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#features-and-tools">Features and tools</a></li>
+        
+    
+        <li class="main "><a href="#whats-the-difference-compared-to-other-screenshot-applications">What's the difference compared to other screenshot applications?</a></li>
+        
+    
+        <li class="main "><a href="#installing">Installing</a></li>
+        
+            <li><a href="#automatic-installation">Automatic Installation</a></li>
+        
+            <li><a href="#manual-installation">Manual Installation</a></li>
+        
+            <li><a href="#how-to-uninstall">How to uninstall?</a></li>
+        
+    
+        <li class="main "><a href="#configuration">Configuration</a></li>
+        
+            <li><a href="#where-is-the-config-being-stored">Where is the config being stored?</a></li>
+        
+            <li><a href="#available-properties">Available properties</a></li>
+        
+            <li><a href="#full-example-of-working-config-file">Full example of working config file</a></li>
+        
+    
+        <li class="main "><a href="#building-from-source">Building from source</a></li>
+        
+            <li><a href="#requirements">Requirements</a></li>
+        
+            <li><a href="#building-pengui">Building pengui</a></li>
+        
+            <li><a href="#building-pengui-as-a-flatpak-application">Building pengui as a Flatpak application</a></li>
+        
+    
+        <li class="main "><a href="#contributing">Contributing</a></li>
+        
+    
+        <li class="main "><a href="#acknowledgements">Acknowledgements</a></li>
+        
+    
+        <li class="main "><a href="#license">License</a></li>
+        
+    
+    </ul>
+</div>
+</div>
+            <div class="col-md-9" role="main">
+
+<div align="center">
+    <h1>
+        <a href="https://github.com/kanashimo/pengui">
+            <img src="assets/pengui.svg" width="200" alt="pengui">
+        </a>
+        <br>
+        pengui
+        <br>
+        <img alt="artifact build status" src="https://img.shields.io/github/actions/workflow/status/kanashimo/pengui/.github%2Fworkflows%2Fflatpak-artifact.yml?logo=githubactions&logoColor=white">
+        <img alt="release" src="https://img.shields.io/github/v/release/kanashimo/pengui?color=blue">
+        <img alt="C++20" src="https://img.shields.io/badge/C%2B%2B-20-blue?logo=c%2B%2B">
+        <img alt="license" src="https://img.shields.io/github/license/kanashimo/pengui?logo=gnu&color=red">
+    </h1>
+    Bloat-free screenshot utility
+</div>
+
+<h2 id="features-and-tools">Features and tools</h2>
+<ul>
+<li>Taking and cropping screenshots</li>
+<li>Support for both Wayland and X11</li>
+<li>Ruler with axis alignment support (<kbd>Shift</kbd>)</li>
+<li>Pipette </li>
+</ul>
+<h2 id="whats-the-difference-compared-to-other-screenshot-applications">What's the difference compared to other screenshot applications?</h2>
+<p>Most of the popular alternatives use a huge, bloated frameworks like Qt or GTK. Meanwhile, pengui uses raw OpenGL and ImGui and requires only half of the memory that KDE's Spectacle needs.</p>
+<blockquote>
+<p>It's a known bug that pengui can be CPU-consuming, it will be fixed in the upcoming release. Also, pengui uses GTK as a library, but only to be able to take screenshots with <code>libportal</code>, not to display any content.</p>
+</blockquote>
+<h2 id="installing">Installing</h2>
+<h3 id="automatic-installation">Automatic Installation</h3>
+<p>Paste this command into your terminal:</p>
+<pre><code class="language-bash">wget -O - https://pengui.kanashimo.net/install.sh | sh
+</code></pre>
+<p>Alternatively, if you don't trust the first source or it just doesn't work, you can download the script directly form the repository:</p>
+<pre><code class="language-bash">wget -O - https://raw.githubusercontent.com/kanashimo/pengui/refs/heads/main/install.sh | sh
+</code></pre>
+<p>After installation, you can assign a system shortcut to pengui for launching it with something like <kbd>Meta+Shift+S</kbd> or <kbd>PrntScr</kbd> in your system settings.</p>
+<h3 id="manual-installation">Manual Installation</h3>
+<ol>
+<li>Download the latest Flatpak bundle from <a href="https://github.com/Kanashimo/pengui/releases">releases page</a>.</li>
+<li>Add the Flathub repository to your user.</li>
+</ol>
+<pre><code class="language-bash">flatpak remote-add --user --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+</code></pre>
+<ol>
+<li>Install pengui.</li>
+</ol>
+<pre><code class="language-bash">flatpak install --user pengui.flatpak
+</code></pre>
+<p>If you don't have GNOME runtime installed and for some reason it wasn't installed automatically, run this command:</p>
+<pre><code class="language-bash">flatpak install --user flathub org.gnome.Platform//51
+</code></pre>
+<p>Same as in automatic installation, you can now assign system shortcut to pengui for launching it with for something like <kbd>Meta+Shift+S</kbd> or <kbd>PrntScr</kbd> in your system's settings.</p>
+<h3 id="how-to-uninstall">How to uninstall?</h3>
+<p>To uninstall pengui, use <code>flatpak uninstall</code> with <code>--user</code> flag.</p>
+<pre><code class="language-bash">flatpak uninstall --user net.kanashimo.pengui
+</code></pre>
+<h2 id="configuration">Configuration</h2>
+<p>Pengui uses <code>.toml</code> files for its configuration, <a href="https://toml.io/en/">here</a> you can get a quick tour of the language if you don't know it yet.</p>
+<h3 id="where-is-the-config-being-stored">Where is the config being stored?</h3>
+<p>The answer is as always, it depends. If you are running this application in the "official" way (so through Flatpak), you will be albe to find the config in <code>$HOME/.var/app/net.kanashimo.pengui/config/pengui</code>. Otherwise, if you are running it natively, your config will be in <code>$HOME/.config/pengui</code>.</p>
+<h3 id="available-properties">Available properties</h3>
+<h4 id="cropborder"><code>[crop.border]</code></h4>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Default value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>color</code></td>
+<td><code>[R, G, B]</code></td>
+<td><code>[90, 200, 255]</code></td>
+</tr>
+<tr>
+<td><code>width</code></td>
+<td><code>number</code></td>
+<td><code>2</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="cropglow-experimental-disabled-by-default"><code>[crop.glow]</code> <strong>(experimental, disabled by default)</strong></h4>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Default value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>color</code></td>
+<td><code>[R, G, B]</code></td>
+<td><code>[90, 200, 255]</code></td>
+</tr>
+<tr>
+<td><code>enabled</code></td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="rulerborder"><code>[ruler.border]</code></h4>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Default value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>color</code></td>
+<td><code>[R, G, B]</code></td>
+<td><code>[90, 200, 255]</code></td>
+</tr>
+<tr>
+<td><code>width</code></td>
+<td><code>number</code></td>
+<td><code>5</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="screenshot"><code>[screenshot]</code></h4>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Default value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>save_location</code></td>
+<td><code>string</code> (path)</td>
+<td><code>$XDG_PICTURES_DIR/PenguiScreenshots</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="full-example-of-working-config-file">Full example of working config file</h3>
+<pre><code class="language-toml">[crop.border]
+color = [ 90, 200, 255 ]
+width = 2.0
+
+[crop.glow]
+color = [ 90, 200, 255 ]
+enabled = false
+
+[ruler.border]
+color = [ 90, 200, 255 ]
+width = 5.0
+
+[screenshot]
+save_location = '/home/example/Pictures/PenguiScreenshots'
+</code></pre>
+<h2 id="building-from-source">Building from source</h2>
+<h3 id="requirements">Requirements</h3>
+<ul>
+<li><a href="https://mesonbuild.com/">meson</a></li>
+<li><a href="https://ninja-build.org/">ninja</a></li>
+<li><a href="https://github.com/flatpak/flatpak">flatpak</a> (optional)</li>
+<li><a href="https://github.com/flatpak/flatpak-builder">flatpak-builder</a> (optional)</li>
+</ul>
+<h3 id="building-pengui">Building pengui</h3>
+<pre><code class="language-bash">meson setup build
+meson compile -C build
+</code></pre>
+<p>After building you can run <code>meson install -C build</code> to install the binary, although it isn't recommended because pengui is intended to be a Flatpak application, so this option has been never tested. Use at your own risk.</p>
+<h3 id="building-pengui-as-a-flatpak-application">Building pengui as a Flatpak application</h3>
+<pre><code class="language-bash">meson subprojects download
+flatpak-builder --user --install --force-clean build-dir flatpak/net.kanashimo.pengui.yml
+</code></pre>
+<h2 id="contributing">Contributing</h2>
+<p>All contributions are welcome! If you have come up with an idea to add a new feature and want to implement it (or just request it), create an <a href="https://github.com/Kanashimo/pengui/issues">issue</a>. If you found any bug, I'd really appreciate it if you could report it.</p>
+<h2 id="acknowledgements">Acknowledgements</h2>
+<p>Special thanks to <a href="https://graphlink.eu/">GraphLink</a> for making our logo.</p>
+<h2 id="license">License</h2>
+<p>Pengui is released under the <a href="https://github.com/Kanashimo/pengui/blob/main/LICENSE">GPL-3.0 license</a>.</p>
+<p>The logo is under the CC BY-SA 4.0 license.</p></div>
+        </div>
+
+    <footer class="col-md-12">
+        <hr>
+        
+    </footer>
+
+        <script src="./js/jquery.min.js"></script>
+        <script src="./js/bootstrap.min.js"></script>
+        <script src="./js/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <script src="./js/base.js"></script>
+        <script src="search/main.js"></script>
+    </body>
+</html>
