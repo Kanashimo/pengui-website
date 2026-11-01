@@ -1,0 +1,14 @@
+site_name: pengui
+
+theme:
+  name: cluster
+  fa_logo: fa-camera
+
+nav:
+  - Home: index.md
+  - Showcase: showcase.md
+  - Report an issue: https://github.com/Kanashimo/pengui/issues
+
+repo_url: https://github.com/kanashimo/pengui
+site_description: Bloat-free screenshot utility
+site_author: Kanashimo
