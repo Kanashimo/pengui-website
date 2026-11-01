@@ -41,12 +41,12 @@ wget -O - https://raw.githubusercontent.com/kanashimo/pengui/refs/heads/main/ins
 After installation, you can assign a system shortcut to pengui for launching it with something like <kbd>Meta+Shift+S</kbd> or <kbd>PrntScr</kbd> in your system settings.
 
 ### Manual Installation
-1. Download the latest Flatpak bundle from [releases page](https://github.com/Kanashimo/pengui/releases).
-2. Add the Flathub repository to your user.
+- Download the latest Flatpak bundle from [releases page](https://github.com/Kanashimo/pengui/releases).
+- Add the Flathub repository to your user.
 ```bash
 flatpak remote-add --user --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 ```
-3. Install pengui.
+- Install pengui.
 ```bash
 flatpak install --user pengui.flatpak
 ```
