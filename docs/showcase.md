@@ -15,3 +15,9 @@
 <video src="/assets/pipette.mp4" width="100%" controls muted autoplay>
     Your browser doesn't support video.
 </video>
+
+# Configuration
+
+<video src="/assets/config.mp4" width="100%" controls muted autoplay>
+    Your browser doesn't support video.
+</video>
